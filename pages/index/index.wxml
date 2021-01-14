@@ -7,7 +7,11 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+   <view class="user-detail">
+
+    <l-input label="姓名"  placeholder="请输入用户名"  />
+    <l-input label="身份证号"  type="idcard" placeholder="请输入身份证号"  />
+    <l-input label="联系方式"  type="number" placeholder="请输入手机号码"  />
+   </view>
+ 
 </view>

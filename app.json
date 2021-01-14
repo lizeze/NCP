@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/me/me",
+    "pages/back/back",
     "pages/logs/logs"
   ],
   "window":{
@@ -10,5 +12,32 @@
     "navigationBarTextStyle":"black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents":{
+    "l-input":"/miniprogram_npm/lin-ui/input/index",
+    "l-radio-group":"/miniprogram_npm/lin-ui/radio-group/index",
+    "l-radio":"/miniprogram_npm/lin-ui/radio/index"
+
+
+    
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "测试"
+      }
+    ]
+  }
 }
