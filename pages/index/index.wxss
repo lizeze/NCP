@@ -1,4 +1,9 @@
 /**index.wxss**/
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
 .userinfo {
   display: flex;
   flex-direction: row;
@@ -15,14 +20,30 @@
 .userinfo-nickname {
   color: #aaa;
 }
-.user-detail{
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-}
+ 
 .gender{
   display: flex;
-  border: 1px solid red;
+  margin-left: 10px;
+  padding: 4px;
+}
+.gender .label{
+  color:#333;
+
+  font-size: 28rpx;
+  height: 88rpx;
+}
+.gender .label.disable{
+  color: #9a9a9a!important;
+
+}
+.gender .radio-group{
+
+  margin-left: 45px;
+}
+.button-tool{
+  margin-top: 30px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
+ 

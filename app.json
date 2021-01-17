@@ -16,7 +16,16 @@
   "usingComponents":{
     "l-input":"/miniprogram_npm/lin-ui/input/index",
     "l-radio-group":"/miniprogram_npm/lin-ui/radio-group/index",
-    "l-radio":"/miniprogram_npm/lin-ui/radio/index"
+    "l-radio":"/miniprogram_npm/lin-ui/radio/index",
+  
+    "l-form":"/miniprogram_npm/lin-ui/form/index",
+    "l-form-item":"/miniprogram_npm/lin-ui/form-item/index",
+    "l-button":"/miniprogram_npm/lin-ui/button/index",
+    "l-message":"/miniprogram_npm/lin-ui/message/index"
+
+
+
+   
 
 
     
@@ -27,16 +36,13 @@
     "borderStyle": "white",
     "list": [
       {
+        "pagePath": "pages/back/back",
+        "text": "信息登记"
+      },
+     
+      {
         "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
-      },
-      {
-        "pagePath": "pages/me/me",
-        "text": "测试"
+        "text": "我的"
       }
     ]
   }
