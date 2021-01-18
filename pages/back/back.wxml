@@ -1,8 +1,16 @@
-<view class="section">
-  <view class="section__title">省市区选择器</view>
-  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+<view class="container">
+	<view class="section">
+		<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+			<view class="picker label">
+				外出所在地: {{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
+  <view class="section">
+  <picker mode="date" value="{{time}}"  bindchange="bindTimeChange">
     <view class="picker">
-      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+      当前选择: {{time}}
     </view>
   </picker>
+</view>
 </view>

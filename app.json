@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/back/back",
     "pages/index/index",
     "pages/me/me",
-    "pages/back/back",
     "pages/logs/logs"
   ],
   "window":{

@@ -1,0 +1,15 @@
+.label{
+  color:#333;
+
+  font-size: 28rpx;
+  height: 88rpx;
+}
+.label.disable{
+  color: #9a9a9a!important;
+
+}
+
+.container{
+
+  padding: 6px;
+}

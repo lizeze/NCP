@@ -26,16 +26,7 @@
   margin-left: 10px;
   padding: 4px;
 }
-.gender .label{
-  color:#333;
 
-  font-size: 28rpx;
-  height: 88rpx;
-}
-.gender .label.disable{
-  color: #9a9a9a!important;
-
-}
 .gender .radio-group{
 
   margin-left: 45px;
@@ -47,3 +38,6 @@
   justify-content: center;
 }
  
+l-radio{
+  margin-right:12px;
+}
