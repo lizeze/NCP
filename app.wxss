@@ -1,15 +1,28 @@
-.label{
-  color:#333;
-
-  font-size: 28rpx;
+.label {
+  
   height: 88rpx;
 }
-.label.disable{
-  color: #9a9a9a!important;
 
+.label.disable {
+  color: #9a9a9a !important;
 }
 
-.container{
+.picker {
+  display: flex;
+  flex-direction: row;
+}
+
+.label-item {
+  color: #333;
+
+  font-size: 28rpx;
+  width: 180rpx;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.container {
 
   padding: 6px;
 }
+ 
