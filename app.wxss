@@ -17,7 +17,7 @@
 
   font-size: 28rpx;
   width: 180rpx;
-  text-align: right;
+  text-align: left;
   margin-right: 10px;
 }
 

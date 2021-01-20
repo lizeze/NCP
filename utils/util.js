@@ -4,12 +4,15 @@
    switch (appId) {
 
      default:
-       return 'https://xx996.cn/xilvcun/api/'
+       //  return 'https://xx996.cn/xilvcun/api/'
+       return 'http://localhost:8089/api/'
    }
  }
 
  const formatTime = date => {
-  date=date||new Date()
+   date = date || new Date()
+   if (typeof date === 'string')
+     date = new Date(date)
    const year = date.getFullYear()
    const month = date.getMonth() + 1
    const day = date.getDate()
@@ -68,12 +71,12 @@
    }
  }
 
- let sendPost = function (url, data,type) {
+ let sendPost = function (url, data, type) {
    return new Promise((resovle, reject) => {
      wx.request({
        url: appUrl() + url,
        data: data,
-       method: type||'POST',
+       method: type || 'POST',
        header: {
          "appId": wx.getStorageSync('appId'),
          "accessToken": wx.getStorageSync("accessToken"),
@@ -94,29 +97,29 @@
 
  }
  let sendGet = function (url) {
-  return new Promise((resovle, reject) => {
-    wx.request({
-      url: appUrl() + url,
-      method: 'GET',
-      header: {
-        "appId": wx.getStorageSync('appId'),
-        "accessToken": wx.getStorageSync("accessToken"),
-        "userId": wx.getStorageSync("userId"),
-      },
-      complete: function (data) {
-        if (data.statusCode !== 200) {
-          showMessage.errorMessage(data.data || '请求失败')
-          reject()
+   return new Promise((resovle, reject) => {
+     wx.request({
+       url: appUrl() + url,
+       method: 'GET',
+       header: {
+         "appId": wx.getStorageSync('appId'),
+         "accessToken": wx.getStorageSync("accessToken"),
+         "userId": wx.getStorageSync("userId"),
+       },
+       complete: function (data) {
+         if (data.statusCode !== 200) {
+           showMessage.errorMessage(data.data || '请求失败')
+           reject()
 
-        } else
-          resovle(data)
-      }
+         } else
+           resovle(data)
+       }
 
-    })
-  })
+     })
+   })
 
 
-}
+ }
  module.exports = {
    formatTime,
    checkRules,

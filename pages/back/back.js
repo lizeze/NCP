@@ -6,17 +6,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    region: ['广东省', '广州市', '海珠区'],
-    array:['是','否'],
-    havaArray:['无','有'],
-    haveCheck:0,
-    customItem: '全部',
-    returnDate:util.formatTime(),
-    passingRisk:0
+    region: ['请选择', '请选择', '请选择'],
+    haveCheck: 0,
+    customItem: '请选择',
+    returnDate: util.formatTime(),
+    passingRisk: 1,
+    readOnly:false
   },
 
- 
+  async onLoad() {
+    let data =  await util.sendGet('back/' + wx.getStorageSync('userId'))
+    let regionArray = []
+    regionArray.push(data.data.province) 
+    regionArray.push(data.data.city)
+     regionArray.push(data.data.county)
+    if (data) {
+       console.log(regionArray)
+      this.setData({
+        region: regionArray,
+        haveCheck: data.data.haveCheck,
+        returnDate:util.formatTime(data.data.returnDate),
+        passingRisk: data.data.passingRisk,
+        readOnly:true
+      })
+    }
 
+  },
   /**
    * 用户点击右上角分享
    */
@@ -29,28 +44,51 @@ Page({
       region: e.detail.value
     })
   },
-  bindHavePickerChange(e){
+
+  onChangeHavaCheck(e) {
+    let isHava = e.detail.value
     this.setData({
-      haveCheck: e.detail.value
+      haveCheck: isHava ? 1 : 0
+    })
+  },
+  onChangePassingRisk(e) {
+    let isPassingRisk = e.detail.value
+    this.setData({
+
+      passingRisk: isPassingRisk ? 1 : 0
     })
 
+
   },
-  bindPickerChange(e){
+  bindTimeChange(e) {
+
     this.setData({
-      passingRisk: e.detail.value
+      returnDate: e.detail.value
     })
-
   },
-  bindTimeChange(e){
+  async saveInfo() {
+    if (this.data.region.indexOf('请选择') != -1) {
+      util.showMessage.warningMessage("请选择外出所在地，精确到区县")
+      return
+    }
+    let data = {
 
-   this.setData({
-    returnDate:e.detail.value
-   })
+      userId: wx.getStorageSync('userId'),
+      province: this.data.region[0],
+      city: this.data.region[1],
+      county: this.data.region[2],
+      haveCheck: this.data.haveCheck,
+      returnDate: this.data.returnDate,
+      passingRisk: this.data.passingRisk
+    }
+    let result = await util.sendPost('/back/', data)
+
+    console.log(result)
   },
   change(e) {
     let items = this.data.items;
     items.forEach(item => {
-      if(item.name == e.detail.key) {
+      if (item.name == e.detail.key) {
         item.checked = e.detail.checked;
       }
     });
