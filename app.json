@@ -17,7 +17,9 @@
     "l-input":"/miniprogram_npm/lin-ui/input/index",
     "l-radio-group":"/miniprogram_npm/lin-ui/radio-group/index",
     "l-radio":"/miniprogram_npm/lin-ui/radio/index",
-  
+    "i-cell-group": "/dist/cell-group/index",
+    "i-cell": "/dist/cell/index",
+    "i-switch": "/dist/switch/index",
     "l-form":"/miniprogram_npm/lin-ui/form/index",
     "l-form-item":"/miniprogram_npm/lin-ui/form-item/index",
     "l-button":"/miniprogram_npm/lin-ui/button/index",

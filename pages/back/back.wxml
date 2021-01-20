@@ -1,5 +1,5 @@
 <view class="container">
-	<view class="form-item" >
+	<view class="form-item">
 		<view class="section">
 			<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
 				<view class="picker label">
@@ -12,9 +12,32 @@
 		<view class="section">
 			<picker mode="date" value="{{time}}" bindchange="bindTimeChange">
 				<view class="picker label">
-					<view class="label-item">当前选择</view> {{returnDate}}
+					<view class="label-item">返回日期</view> {{returnDate}}
 				</view>
 			</picker>
 		</view>
+	</view>
+	<view>
+
+		<view>
+			<view class="section">
+				<picker bindchange="bindPickerChange" value="{{passingRisk}}" range="{{array}}">
+					<view class="picker label">
+						<view class="label-item">近14天是否去过高危区</view>{{array[passingRisk]}}
+					</view>
+				</picker>
+			</view>
+		</view>
+
+		<view>
+			<view class="section">
+				<picker bindchange="bindHavePickerChange" value="{{haveCheck}}" range="{{havaArray}}">
+					<view class="picker label">
+						<view class="label-item">核酸证明</view>{{havaArray[haveCheck]}}
+					</view>
+				</picker>
+			</view>
+		</view>
+		<l-button   bind:lintap="saveInfo" type="default">保存</l-button>
 	</view>
 </view>

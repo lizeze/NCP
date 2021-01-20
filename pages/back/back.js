@@ -7,8 +7,12 @@ Page({
    */
   data: {
     region: ['广东省', '广州市', '海珠区'],
+    array:['是','否'],
+    havaArray:['无','有'],
+    haveCheck:0,
     customItem: '全部',
-    returnDate:util.formatTime()
+    returnDate:util.formatTime(),
+    passingRisk:0
   },
 
  
@@ -24,6 +28,18 @@ Page({
     this.setData({
       region: e.detail.value
     })
+  },
+  bindHavePickerChange(e){
+    this.setData({
+      haveCheck: e.detail.value
+    })
+
+  },
+  bindPickerChange(e){
+    this.setData({
+      passingRisk: e.detail.value
+    })
+
   },
   bindTimeChange(e){
 
