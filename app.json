@@ -1,9 +1,6 @@
 {
-  "pages":[
-    "pages/back/back",
-    "pages/index/index",
-    "pages/me/me",
-    "pages/logs/logs"
+  "pages":["pages/me/me",
+    "pages/demand/demand"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -15,6 +12,7 @@
   "sitemapLocation": "sitemap.json",
   "usingComponents":{
     "l-input":"/miniprogram_npm/lin-ui/input/index",
+    "i-input":"/dist/input/index",
     "l-radio-group":"/miniprogram_npm/lin-ui/radio-group/index",
     "l-radio":"/miniprogram_npm/lin-ui/radio/index",
     "i-cell-group": "/dist/cell-group/index",
@@ -23,7 +21,8 @@
     "l-form":"/miniprogram_npm/lin-ui/form/index",
     "l-form-item":"/miniprogram_npm/lin-ui/form-item/index",
     "l-button":"/miniprogram_npm/lin-ui/button/index",
-    "l-message":"/miniprogram_npm/lin-ui/message/index"
+    "l-message":"/miniprogram_npm/lin-ui/message/index",
+    "i-card": "../../dist/card/index"
 
 
 
@@ -38,13 +37,13 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/back/back",
+        "pagePath": "pages/demand/demand",
         "text": "信息登记"
       },
      
       {
-        "pagePath": "pages/index/index",
-        "text": "我的"
+        "pagePath": "pages/me/me",
+        "text": "公告"
       }
     ]
   }

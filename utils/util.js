@@ -4,8 +4,8 @@
    switch (appId) {
 
      default:
-       //  return 'https://xx996.cn/xilvcun/api/'
-       return 'http://localhost:8089/api/'
+        return 'https://xx996.cn/xilvcun/api/'
+      //  return 'http://localhost:8089/api/'
    }
  }
 
@@ -120,10 +120,35 @@
 
 
  }
+ let sendDelete = function (url) {
+  return new Promise((resovle, reject) => {
+    wx.request({
+      url: appUrl() + url,
+      method: 'DELETE',
+      header: {
+        "appId": wx.getStorageSync('appId'),
+        "accessToken": wx.getStorageSync("accessToken"),
+        "userId": wx.getStorageSync("userId"),
+      },
+      complete: function (data) {
+        if (data.statusCode !== 200) {
+          showMessage.errorMessage(data.data || '请求失败')
+          reject()
+
+        } else
+          resovle(data)
+      }
+
+    })
+  })
+
+
+}
  module.exports = {
    formatTime,
    checkRules,
    sendPost,
    sendGet,
-   showMessage
+   showMessage,
+   sendDelete
  }

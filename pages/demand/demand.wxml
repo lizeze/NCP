@@ -1,0 +1,11 @@
+<i-cell-group>
+	<i-input  bind:change="addressChange" value="{{ address }}" title="门牌号" autofocus placeholder="请输入门牌号" />
+
+	<i-input  maxlength="11" bind:change="phoneChange" value="{{ phone }}" title="联系电话" type="number"  autofocus placeholder="请输入联系电话" />
+
+<i-input bind:change="demandChange" value="{{ demand }}" type="textarea" title="详细需求" placeholder="请输入详细需求"  />
+	<i-cell  style="text-align:center" >
+		 <l-button    bind:lintap="saveInfo" type="default">保存</l-button>
+		 <l-button       bind:lintap="deleteInfo" type="error">删除</l-button>
+	</i-cell>
+</i-cell-group><l-message />

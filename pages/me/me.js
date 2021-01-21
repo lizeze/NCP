@@ -1,18 +1,28 @@
 // pages/me/me.js
+var util = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+ list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad:  async function (options) {
+  let result=await util.sendGet('notice/')
 
+    for (let index = 0; index < result.data.length; index++) {
+      let  element = result.data[index];
+       
+      element.createTime=util.formatTime(element.createTime)
+    }
+  this.setData({
+    list:result.data
+  })
   },
 
   /**
